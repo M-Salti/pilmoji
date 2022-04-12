@@ -151,7 +151,8 @@ class Pilmoji:
             entry.seek(0)
             return entry
 
-        if stream := self.source.get_emoji(emoji):
+        stream = self.source.get_emoji(emoji)
+        if stream:
             if self._cache:
                 self._emoji_cache[emoji] = stream
 
@@ -166,7 +167,8 @@ class Pilmoji:
             entry.seek(0)
             return entry
 
-        if stream := self.source.get_discord_emoji(id):
+        stream = self.source.get_discord_emoji(id)
+        if stream:
             if self._cache:
                 self._discord_emoji_cache[id] = stream
 

@@ -45,7 +45,7 @@ setup(
     extras_require={
         'requests': ['requests']
     },
-    python_requires='>=3.8.0',
+    python_requires='>=3.7.0',
     classifiers=[
         'License :: OSI Approved :: MIT License',
         'Intended Audience :: Developers',
