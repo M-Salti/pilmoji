@@ -145,7 +145,7 @@ class Pilmoji:
             self._new_draw = True
             self.draw = ImageDraw.Draw(self.image)
 
-    def _get_emoji(self, emoji: str, /) -> Optional[BytesIO]:
+    def _get_emoji(self, emoji: str) -> Optional[BytesIO]:
         if self._cache and emoji in self._emoji_cache:
             entry = self._emoji_cache[emoji]
             entry.seek(0)
@@ -159,7 +159,7 @@ class Pilmoji:
             stream.seek(0)
             return stream
 
-    def _get_discord_emoji(self, id: SupportsInt, /) -> Optional[BytesIO]:
+    def _get_discord_emoji(self, id: SupportsInt) -> Optional[BytesIO]:
         id = int(id)
 
         if self._cache and id in self._discord_emoji_cache:

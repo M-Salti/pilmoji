@@ -65,7 +65,7 @@ class Node(NamedTuple):
         return f'<Node type={self.type.name!r} content={self.content!r}>'
 
 
-def _parse_line(line: str, /) -> List[Node]:
+def _parse_line(line: str) -> List[Node]:
     nodes = []
 
     for i, chunk in enumerate(EMOJI_REGEX.split(line)):
@@ -86,7 +86,7 @@ def _parse_line(line: str, /) -> List[Node]:
     return nodes
 
 
-def to_nodes(text: str, /) -> List[List[Node]]:
+def to_nodes(text: str) -> List[List[Node]]:
     """Parses a string of text into :class:`~.Node`s.
 
     This method will return a nested list, each element of the list
